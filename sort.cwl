@@ -1,6 +1,8 @@
 class: CommandLineTool
 cwlVersion: v1.0
 
+label: Sort input bed file
+
 requirements:
   DockerRequirement:
     dockerPull: bedtools-image:latest
@@ -10,11 +12,13 @@ requirements:
 
 inputs:
   unsorted_bed:
+    label: input bed file
     type: File
     inputBinding:
       prefix: -i
 
   output_fn:
+    label: output sorted bed file
     type: string
     default: sorted.bed
 
