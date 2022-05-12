@@ -1,6 +1,8 @@
 class: CommandLineTool
 cwlVersion: v1.0
 
+label: Merge input files which have been sorted
+
 requirements:
   DockerRequirement:
     dockerPull: bedtools-image:latest
@@ -10,6 +12,7 @@ requirements:
 
 inputs:
   sorted_bed:
+    label: Inpout sorted bed file
     type: File
     inputBinding:
       prefix: -i
@@ -26,6 +29,7 @@ inputs:
       prefix: -o
 
   output_fn:
+    label: Merged output file name
     type: string
     default: sorted.bed
 
